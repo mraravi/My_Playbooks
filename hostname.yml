@@ -3,5 +3,5 @@
     hosts: all
     tasks:
     - name: "just execute a lspv command"
-      shell: "lspv"
+      command: lspv
       register: "output"
