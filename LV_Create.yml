@@ -13,6 +13,6 @@
         creates: /test
         
     - name: change permissions on /test
-      file: path="/test" mode=0777 owner=mrara group=staff
+      file: path="/test" mode=0777 owner=root group=system
     - name: mount /test
       mount: name=/test src=/dev/testlv state=mounted fstype=jfs2
