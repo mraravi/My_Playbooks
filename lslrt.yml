@@ -4,3 +4,4 @@
     tasks:
     - name: "just execute a ls -lrt command"
       shell: "ls -lrt"
+      register: "output"
