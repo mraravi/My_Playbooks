@@ -2,6 +2,6 @@
   - name: "Playing with Ansible and Git"
     hosts: all
     tasks:
-    - name: "just execute a hostname command"
+    - name: "just execute a lspv command"
       shell: "lspv"
       register: "output"
