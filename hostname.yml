@@ -1,0 +1,7 @@
+---
+  - name: "Playing with Ansible and Git"
+    hosts: g23acxwas003.au.ibm.com
+    tasks:
+    - name: "just execute a hostname command"
+      shell: "hostname"
+      register: "output"
