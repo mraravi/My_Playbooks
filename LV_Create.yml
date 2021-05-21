@@ -2,6 +2,6 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:   
-   - name: change permissions on /test
+    - name: change permissions on /test
       file: path="/test" mode=0777 owner=mrara group=staff
   
