@@ -12,13 +12,3 @@
       args:
         creates: /test
   
-    - name: Mount filesystem /test
-      aix_filesystem:
-        filesystem: /test
-        state: mounted
-      register: mount_result
-      when:
-        - fs_result.changed
-    
-    - name: change permissions on /test
-      file: path="/test" mode=0777 owner=root group=system
