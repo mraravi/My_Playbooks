@@ -1,7 +1,0 @@
----
-  - name: "Playing with Ansible and Git"
-    hosts: all
-    tasks:
-    - name: "just execute a lspv command"
-      command: lspv
-      register: "output"
