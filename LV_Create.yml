@@ -8,7 +8,7 @@
         creates: /dev/testlv
     
     - name: create filesystem /test
-      command: crfs -v jfs2 -A yes -m /test -d /dev/testls
+      command: crfs -v jfs2 -A yes -m /test -d /dev/testlv
       args:
         creates: /test
         
