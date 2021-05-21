@@ -2,6 +2,17 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:   
+    - name: create logical volume testlv
+      command: mklv -t jfs2 -y testlv db2vg 8 
+      args:
+        creates: /dev/testlv
+    
+    - name: create filesystem /test
+      command: crfs -v jfs2 -d /dev/testlv -m /test -A yes
+      args:
+        creates: /test
+        
+    - name: mount /test
+      mount: name=/test src=/dev/testlv state=mounted fstype=jfs2
     - name: change permissions on /test
       file: path="/test" mode=0777 owner=mrara group=staff
-  
