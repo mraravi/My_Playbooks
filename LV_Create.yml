@@ -3,7 +3,7 @@
   gather_facts: False
   tasks:   
     - name: create logical volume testlv
-      command: mklv -t jfs2 -y testlv db2vg 8 
+      command: mklv -t jfs2 -y testlv db2vg 16 
       args:
         creates: /dev/testlv
     
