@@ -1,8 +1,0 @@
-- name: Creation of a JFS2 filesystem
-  ibm.power_aix.filesystem:
-    state: present
-    filesystem: /test
-    fs_type: jfs2
-    attributes: size=8,isnapshot='no'
-    mount_group: testlv
-    vg: db2vg
