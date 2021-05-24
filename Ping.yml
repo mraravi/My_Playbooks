@@ -2,9 +2,10 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:   
-    - name: change permission on /opt/IBM/cobalt
-      command: chmod 0777 /opt/IBM/cobalt
+    - name: List mounted filesystems
+      ibm.power_aix.mount:
 
-    - name: change owner and group on /opt/IBM/cobalt
-      command: chown root:system /opt/IBM/cobalt
-      args:
+    - name: Mount filesystems
+      ibm.power_aix.mount:
+      mount_dir: /dev/cc_lv
+      mount_filesystem: /opt/IBM/cobalt
