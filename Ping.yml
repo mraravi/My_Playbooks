@@ -2,5 +2,5 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:  
-    - name: mount file system /test1
-      mount: name=/test1 src=/dev/testlv state=mounted fstype=jfs2
+    - name: mount file system /opt/IBM/cobalt
+      mount: name=/opt/IBM/cobalt src=/dev/cc_lv state=mounted fstype=jfs2
