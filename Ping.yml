@@ -4,5 +4,7 @@
   tasks:   
     - name: change permission on /opt/IBM/cobalt
       command: chmod 0777 /opt/IBM/cobalt
+
+    - name: change owner and group on /opt/IBM/cobalt
       command: chown root:system /opt/IBM/cobalt
       args:
