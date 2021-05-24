@@ -1,4 +1,7 @@
 ---
+- hosts: g23acxwas003.au.ibm.com
+  gather_facts: False
+  tasks:
 - name: Creation of a JFS2 filesystem
   aix.filesystem:
     state: present
