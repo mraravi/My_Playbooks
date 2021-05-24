@@ -1,0 +1,7 @@
+---
+- hosts: g23acxwas003.au.ibm.com
+  gather_facts: False
+  tasks:   
+    - name: increase file system size
+      command: chfs -a size=+5M /opt/IBM/cobalt
+      args:
