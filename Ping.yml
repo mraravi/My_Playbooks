@@ -1,9 +1,7 @@
 ---
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
-  tasks:
-    - name: Increase size of a filesystem
-      aix.filesystem:
-        filesystem: /opt/IBM/cobalt
-        state: present
-        attributes: size=+5M
+  tasks:   
+    - name: increase file system size
+      command: chfs -a size=+5M /opt/IBM/cobalt
+      args:
