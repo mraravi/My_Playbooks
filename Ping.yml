@@ -2,6 +2,12 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:   
-    - name: increase file system size
-      command: chfs -a size=+5M /opt/IBM/cobalt
+    - name: create logical volume testlv
+      command: mklv -t jfs2 -y testlv db2vg 16 
       args:
+        creates: /dev/testlv
+    
+    - name: create file system /test1
+      command: crfs -v jfs2 -A yes -m /test1 -d /dev/testlv
+      args:
+        creates: /test1
