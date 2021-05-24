@@ -1,6 +1,8 @@
 ---
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
-  tasks:  
-    - name: change permissions on /opt/IBM/cobalt
-      file: path="/opt/IBM/cobalt" mode=0777 owner=root group=system
+  tasks:   
+    - name: change permission on /opt/IBM/cobalt
+      command: chmod 0777 /opt/IBM/cobalt
+      command: chown root:system /opt/IBM/cobalt
+      args:
