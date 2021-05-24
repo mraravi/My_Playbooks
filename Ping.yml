@@ -2,9 +2,6 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:   
-    - name: List mounted filesystems
-      ibm.power_aix.mount:
-
     - name: Mount filesystems
       ibm.power_aix.mount:
       mount_dir: /dev/cc_lv
