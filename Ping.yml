@@ -2,7 +2,17 @@
 - hosts: g23acxwas003.au.ibm.com
   gather_facts: False
   tasks:   
-    - name: Mount filesystems
-      ibm.power_aix.mount:
-      mount_dir: /dev/cc_lv
-      mount_filesystem: /opt/IBM/cobalt
+    - name: create logical volume testlv
+      command: mklv -t jfs2 -y testlv db2vg 16 
+      args:
+        creates: /dev/testlv
+    
+    - name: create file system /test1
+      command: crfs -v jfs2 -A yes -m /test1 -d /dev/testlv
+      args:
+        creates: /test1
+
+    - name: change permissions on /test
+      file: path="/test" mode=0777 owner=root group=system
+    - name: mount /test
+      mount: name=/test src=/dev/testlv state=mounted fstype=jfs2
