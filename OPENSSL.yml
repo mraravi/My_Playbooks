@@ -3,9 +3,8 @@
   user: anstadm
   become: true
   gather_facts: False
-  tasks:   
-    - name:  update packages on the server
-      command: emgr -e 1022100b.210323.epkg.Z -p
-      repository_path: /test/1022100b.210323.epkg.Z
-      name: all
-      state: present
+  tasks:
+    - name: Removing EFIX
+      shell: 
+        cmd: emgr -r -L 1022100a
+      tags: remove_efix
