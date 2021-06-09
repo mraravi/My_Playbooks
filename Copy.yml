@@ -1,0 +1,9 @@
+---
+- hosts: 9.182.9.63
+  user: anstadm
+  become: true
+  gather_facts: False
+  tasks:   
+    - copy:
+        src: /home/Mallikarjun/Desktop/aix PATCH/openssl_new/openssl_fix33/1022100b.210323.epkg.Z
+        dest: /tmp/
