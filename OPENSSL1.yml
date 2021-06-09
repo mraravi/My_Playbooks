@@ -1,0 +1,10 @@
+---
+- hosts: g23acxwas003.au.ibm.com
+  user: anstadm
+  become: true
+  gather_facts: False
+  tasks:
+   - name: Install EFIX
+     shell: 
+       cmd: find {{ /tmp }}/fixes -type f -name *.epkg.Z -exec emgr -e {} \;
+     tags: install_efix
