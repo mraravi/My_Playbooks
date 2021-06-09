@@ -4,8 +4,8 @@
   become: true
   gather_facts: False
   tasks:   
-    - name: change permissions on /test1
-      file: path="/test1" mode=0777 owner=mrara group=staff
+    - name: change permissions on /temp/1022100b.210323.epkg.Z
+      file: path="/temp/1022100b.210323.epkg.Z" mode=0777 owner=mrara group=staff
 
     - name:  upgrade all kernel packages on the server
       command: emgr -e 1022100a.210112.epkg.Z -p
