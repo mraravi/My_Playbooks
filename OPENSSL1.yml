@@ -5,7 +5,7 @@
   gather_facts: False
   tasks:
    - name: Install EFIX
-       shell: 
+     shell: 
        cmd: emgr -e 1022100b.210323.epkg.Z -p
        file: path="/temp/1022100b.210323.epkg.Z"
      tags: install_efix
