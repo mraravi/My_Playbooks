@@ -4,7 +4,7 @@
   become: true
   gather_facts: False
   tasks:   
-    - name:  update openssl packages on the server
+    - name:  update packages on the server
       command: emgr -e 1022100b.210323.epkg.Z -p
       repository_path: /test/1022100b.210323.epkg.Z
       name: all
