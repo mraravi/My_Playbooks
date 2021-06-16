@@ -3,14 +3,6 @@
   user: anstadm
   become: true
   gather_facts: False
-  tasks:
-    - name: create logical volume testlv
-      command: mklv -t jfs2 -y testlv db2vg 16
-      args:
-        creates: /dev/testlv
-    - name: create file system /test1
-      command: crfs -v jfs2 -A yes -m /test1 -d /dev/testlv
-      args:
-        creates: /test1
-    - name: mount /test1
-      mount: name=/test1 src=/dev/testlv state=mounted fstype=jfs2
+  tasks:   
+    - name: Copy file from local to remote
+      copy: src="/home/Mallikarjun/Desktop/aix PATCH/openssl_new/openssl_fix33/1022100b.210323.epkg.Z" dest="/tmp/malli/" mode=0777
