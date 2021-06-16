@@ -5,6 +5,4 @@
   gather_facts: False
   tasks:   
     - name: change permissions on /opt/IBM/cobalt
-      shell: 
-       cmd: chmod -R 0777 /opt/IBM/cobalt
-      file: path="/opt/IBM/cobalt" 
+      file: path="/opt/IBM/cobalt" mode=0777 owner=mrara group=staff recurse=yes
