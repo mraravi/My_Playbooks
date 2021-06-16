@@ -1,5 +1,5 @@
 ---
-- hosts: g23acxwas003.au.ibm.com
+- hosts: 9.190.27.146
   user: anstadm
   become: true
   gather_facts: False
