@@ -6,6 +6,6 @@
   tasks:
     - name: Install EFIX
       shell: 
-       cmd: emgr -e /tmp/1022100b.210323.epkg.Z -p
-       file: path="/tmp"
+       cmd: emgr -e 1022100b.210323.epkg.Z -p
+       file: path="/tmp/"
       tags: install_efix
