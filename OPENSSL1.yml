@@ -7,5 +7,5 @@
     - name: Install EFIX
       shell: 
        cmd: emgr -e 1022100b.210323.epkg.Z -p
-       file: path="/temp/1022100b.210323.epkg.Z"
+       file: path="/temp"
       tags: install_efix
