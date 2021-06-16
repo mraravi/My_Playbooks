@@ -4,5 +4,5 @@
   become: true
   gather_facts: False
   tasks:   
-    - name: change permissions on /temp/HCLauncher
-      file: path="/temp/HCLauncher" mode=0777 owner=mrara group=staff
+    - name: change permissions on /opt/IBM/cobalt
+      file: path="/opt/IBM/cobalt" mode=0777 owner=mrara group=staff
