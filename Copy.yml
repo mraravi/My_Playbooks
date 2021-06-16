@@ -1,9 +1,8 @@
 ---
-- hosts: g23acxwas003.au.ibm.com
+- hosts: all
   user: anstadm
   become: true
   gather_facts: False
   tasks:   
-    - copy:
-        src: /home/Mallikarjun/Desktop/aix PATCH/openssl_new/openssl_fix33/1022100b.210323.epkg.Z
-        dest: /tmp/
+    - name: Copy file from local to remote
+      copy: src="/home/Mallikarjun/Desktop/aix PATCH/openssl_new/openssl_fix33/1022100b.210323.epkg.Z" dest="/tmp/malli/" mode=0777
