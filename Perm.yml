@@ -5,5 +5,5 @@
   gather_facts: False
   tasks:   
     - name: change permissions on /opt/IBM/cobalt
-      recursive: yes
+        recursive: yes
       file: path="/opt/IBM/cobalt" mode=0777 owner=mrara group=staff
